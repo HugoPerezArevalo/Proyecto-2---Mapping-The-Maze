@@ -10,8 +10,8 @@
 2. **Inventario de red y auditoría de activos:** [`inventario.md`](./inventario.md) — Mapeo de los 9 equipos vivos (TCP/UDP), enumeración sin credenciales, cuentas descubiertas, limitaciones y correcciones sobre `inventario-cliente.csv`.
 3. **Registro de vulnerabilidades priorizado:** [`registro-vulns.md`](./registro-vulns.md) — Caracterización técnica (CVE, CWE, MITRE ATT&CK, evidencias, limitaciones), priorización justificada con CVSS v3.1, EPSS y CISA KEV, descarte de falsos positivos y evaluación de `CVE-2026-123158` (*sshole*).
 4. **Informe ejecutivo para el cliente:** [`informe-cliente.md`](./informe-cliente.md) — Resumen para Gerencia de Gadir Logística, S.L., plan de remediación por plazos y respuesta formal sobre la alerta «sshole».
-5. **Agente autónomo (`aap-base`) y comparativa:** *(Pendiente de ejecución en clase — Parte 5)*
-   - [`agente/src/`](./agente/src/) — Herramientas `nmap` y `cve_lookup` integradas con `scope-guard`.
-   - [`agente/pruebas.md`](./agente/pruebas.md) — Validación manual del `scope-guard` (IP dentro/fuera de alcance) y revisión del prompt (`--ver-prompt`).
-   - [`agente/traza.jsonl`](./agente/traza.jsonl) e [`agente/informe.md`](./agente/informe.md) — Ejecución controlada contra `172.17.0.0/24` e informe generado por el agente.
-   - [`comparativa.md`](./comparativa.md) — Análisis crítico mano vs. agente.
+5. **Agente autónomo (`aap-base`) y comparativa:** Parte 5 completada.
+   - [`agentes/hugo-perez/informe.md`](./agentes/hugo-perez/informe.md) — Informe **original y sin editar** generado por el agente (`corsario-1`) contra `172.17.0.0/24`. Sus errores se analizan en `comparativa.md`.
+   - [`agentes/hugo-perez/trazas/2026-11-25_083939.jsonl`](./agentes/hugo-perez/trazas/2026-11-25_083939.jsonl) — Traza de la enumeración (`inicio`, 35 llamadas a herramientas con su evidencia `E01`–`E35` y `fin`) e [`interrogatorio.jsonl`](./agentes/hugo-perez/trazas/interrogatorio.jsonl) — tres preguntas de verificación y sus respuestas. Los ficheros XML/JSON de evidencia se generaron en el espacio de trabajo de `aap-base` (`salida/ejecuciones/2026-11-25_083939/`).
+   - Pruebas manuales del `scope-guard` (dentro/fuera de alcance y casos mal formados), revisión del prompt con `python3 enumerar.py --ver-prompt` y control de gasto (`--max-tokens`, `--max-pasos`): [`cuadernos/hugo-perez.md`](./cuadernos/hugo-perez.md), §8.
+   - [`comparativa.md`](./comparativa.md) — Análisis crítico mano vs. agente, taxonomía de fallos y comparativa entre agentes.
